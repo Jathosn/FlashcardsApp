@@ -66,7 +66,14 @@ namespace Flashcard
                 if (n > 0)
                 {
                     int randomIndex = rng.Next(n);
-                    Console.WriteLine($"{counter}. {Questions[randomIndex]} \n");
+                    Console.WriteLine($"{counter}. {Questions[randomIndex]} Press 'H' for hint. \n");
+
+                    ConsoleKeyInfo hint = Console.ReadKey(true);
+                    if (hint.Key == ConsoleKey.H)
+                    {
+                        Console.WriteLine($"{Hints[randomIndex]} \n");
+                    }
+
                     string answer = Console.ReadLine().ToLower();
                     if (answer == Answers[randomIndex].ToLower())
                     {
@@ -90,8 +97,8 @@ namespace Flashcard
                     Hints.RemoveAt(randomIndex);
 
                     Console.WriteLine($"More questions? Press (y) to continue or any other key to exit. \n");
-                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                    if (keyInfo.Key != ConsoleKey.Y)
+                    ConsoleKeyInfo continueKey = Console.ReadKey(true);
+                    if (continueKey.Key != ConsoleKey.Y)
                     {
                         continueAsking = false;
                     }
