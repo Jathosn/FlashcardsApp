@@ -52,6 +52,8 @@ namespace Flashcard
         }
         public void Randomizer()
         {
+            int correctAnswers = 0;
+            int wrongAnswers = 0;
             Random rng = new Random();
             bool continueAsking = true;
             while (continueAsking)
@@ -64,27 +66,36 @@ namespace Flashcard
                     string answer = Console.ReadLine().ToLower();
                     if (answer == Answers[randomIndex].ToLower())
                     {
-                        Console.WriteLine("That is correct!");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("\nThat is correct!\n");
+                        Console.ResetColor();
+                        correctAnswers++;
                     }
                     else
                     {
-                        Console.WriteLine("That is incorrect.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nThat is incorrect.\n");
+                        Console.ResetColor();
+                        wrongAnswers++;
                     }
 
                     Questions.RemoveAt(randomIndex);
                     Answers.RemoveAt(randomIndex);
                     Hints.RemoveAt(randomIndex);
 
-                    Console.WriteLine("More questions? Press (y) to continue or any other key to exit.");
-                    string userInput = Console.ReadLine().ToLower();
-                    if (userInput != "y")
+                    Console.WriteLine($"More questions? Press (y) to continue or any other key to exit. \n");
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                    if (keyInfo.Key != ConsoleKey.Y)
                     {
                         continueAsking = false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("No more questions available.");
+                    Console.WriteLine("Looks like you've gone through them all, good job!\n");
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"You answered {correctAnswers} out of {correctAnswers + wrongAnswers} correctly.");
+                    Console.ResetColor();
                     continueAsking = false;
                 }
             }

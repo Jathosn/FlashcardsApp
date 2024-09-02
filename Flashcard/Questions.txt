@@ -6,7 +6,7 @@ y/n
 yes
 What computer program was the first to pass the Turing Test
 no hints for this one
-OpenAI
+ChatGPT
 What is the capital of France?
 it has a very famous tower
 Paris
