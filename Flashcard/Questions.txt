@@ -17,8 +17,8 @@ Who painted the Mona Lisa?
 a famous historical person named after a city
 Leonardo da Vinci
 It is the observation that the number of transistors on a microchip doubles approximately every two years. What's the name of the law in question?
-no hints for this one
 It starts with "M"
+Moore's Law
 What is the powerhouse of the cell?
 It starts with "M"
 Mitochondria

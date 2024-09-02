@@ -28,6 +28,7 @@ namespace Flashcard
             program.Randomizer();
 
             Console.ReadLine();
+
         }
          void Information(string textFile, string[] lines)
         {
@@ -58,6 +59,14 @@ namespace Flashcard
             {
                 int randomIndex = rng.Next(n);
                 Console.WriteLine($"Random Question: {Questions[randomIndex]}");
+                string answer = Console.ReadLine().ToLower();
+                if (answer == Answers[randomIndex].ToLower())
+                {
+                    Console.WriteLine("That is correct!");
+                } else
+                {
+                    Console.WriteLine("That is incorrect.");
+                }
             }
         }
     }
