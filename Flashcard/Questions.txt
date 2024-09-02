@@ -1,0 +1,30 @@
+﻿How much is a dozen?
+It is a whole number.
+12
+Has any computer program passed the Turing Test?
+y/n
+yes
+What computer program was the first to pass the Turing Test
+no hints for this one
+OpenAI
+What is the capital of France?
+it has a very famous tower
+Paris
+What is the largset planet in the solar system?
+it's got a very high average temperature
+Jupiter
+Who painted the Mona Lisa?
+a famous historical person named after a city
+Leonardo da Vinci
+It is the observation that the number of transistors on a microchip doubles approximately every two years. What's the name of the law in question?
+no hints for this one
+It starts with "M"
+What is the powerhouse of the cell?
+It starts with "M"
+Mitochondria
+What is the secondary ingredient in steel?
+4 letter word
+Coal
+What is the capital of Canada?
+It starts with "O"
+Ottawa
