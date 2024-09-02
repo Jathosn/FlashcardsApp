@@ -22,8 +22,10 @@ namespace Flashcard
             string textFile = "C:/Users/JanThoresen/source/repos/Flashcard/Flashcard/Info.txt";
             string[] lines = File.ReadAllLines(textFile);
             int totals = lines.Length / 3;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"Welcome to the Flashcards app, here to help you ace your next exam! There are currently '{totals}' questions in total \n");
-            Console.WriteLine($"The questions and answers can be configured in Info.txt. \n");
+            Console.ResetColor();
+            Console.WriteLine($"The questions and answers can be configured in Info.txt. \n\n");
 
             program.Information(textFile, lines);
             program.Randomizer();
@@ -55,6 +57,7 @@ namespace Flashcard
         {
             int correctAnswers = 0;
             int wrongAnswers = 0;
+            int counter = 1;
             Random rng = new Random();
             bool continueAsking = true;
             while (continueAsking)
@@ -63,7 +66,7 @@ namespace Flashcard
                 if (n > 0)
                 {
                     int randomIndex = rng.Next(n);
-                    Console.WriteLine(Questions[randomIndex]);
+                    Console.WriteLine($"{counter}. {Questions[randomIndex]} \n");
                     string answer = Console.ReadLine().ToLower();
                     if (answer == Answers[randomIndex].ToLower())
                     {
@@ -71,6 +74,7 @@ namespace Flashcard
                         Console.WriteLine("\nThat is correct!\n");
                         Console.ResetColor();
                         correctAnswers++;
+                        counter++;
                     }
                     else
                     {
@@ -78,6 +82,7 @@ namespace Flashcard
                         Console.WriteLine("\nThat is incorrect.\n");
                         Console.ResetColor();
                         wrongAnswers++;
+                        counter++;
                     }
 
                     Questions.RemoveAt(randomIndex);
@@ -93,10 +98,11 @@ namespace Flashcard
                 }
                 else
                 {
-                    Console.WriteLine("Looks like you've gone through all the questions. Good job!\n");
+                    Console.WriteLine("Looks like you've gone through all your questions. Good job!\n");
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine($"You answered {correctAnswers} out of {correctAnswers + wrongAnswers} correctly.");
                     Console.ResetColor();
+
                     continueAsking = false;
                 }
             }

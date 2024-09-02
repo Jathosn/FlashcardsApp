@@ -1,9 +1,9 @@
 ﻿How much is a dozen?
 It is a whole number.
 12
-Has any computer program passed the Turing Test?
-y/n
-yes
+Who is the author of "1984"?
+His name starts with "G"
+George Orwell
 What computer program was the first to pass the Turing Test
 no hints for this one
 ChatGPT
