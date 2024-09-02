@@ -57,6 +57,7 @@ namespace Flashcard
         {
             int correctAnswers = 0;
             int wrongAnswers = 0;
+            int hintsCounter = 0;
             int counter = 1;
             Random rng = new Random();
             bool continueAsking = true;
@@ -72,6 +73,7 @@ namespace Flashcard
                     if (hint.Key == ConsoleKey.H)
                     {
                         Console.WriteLine($"{Hints[randomIndex]} \n");
+                        hintsCounter++;
                     }
 
                     string answer = Console.ReadLine().ToLower();
@@ -108,6 +110,7 @@ namespace Flashcard
                     Console.WriteLine("Looks like you've gone through all your questions. Good job!\n");
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine($"You answered {correctAnswers} out of {correctAnswers + wrongAnswers} correctly.");
+                    Console.WriteLine($"You asked for a hint on {hintsCounter} of {correctAnswers + wrongAnswers} questions.");
                     Console.ResetColor();
 
                     continueAsking = false;
