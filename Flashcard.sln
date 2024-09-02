@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashcard", "Flashcard\Flashcard.csproj", "{00B5A8AC-2A36-41B2-9BFC-E9D40556247B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp course 4", "..\Csharp course 4\Csharp course 4\Csharp course 4.csproj", "{767F33D8-E921-4AFA-8EB8-5345D5CF53F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{00B5A8AC-2A36-41B2-9BFC-E9D40556247B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B5A8AC-2A36-41B2-9BFC-E9D40556247B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B5A8AC-2A36-41B2-9BFC-E9D40556247B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767F33D8-E921-4AFA-8EB8-5345D5CF53F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767F33D8-E921-4AFA-8EB8-5345D5CF53F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767F33D8-E921-4AFA-8EB8-5345D5CF53F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767F33D8-E921-4AFA-8EB8-5345D5CF53F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

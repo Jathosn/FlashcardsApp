@@ -22,7 +22,7 @@ namespace Flashcard
             string textFile = "C:/Users/JanThoresen/source/repos/Flashcard/Flashcard/Questions.txt";
             string[] lines = File.ReadAllLines(textFile);
             int totals = lines.Length / 3;
-            Console.WriteLine($"So... you wish to memorize for a test? Please specify the number of questions to choose from. There are {totals} questions in total \n");
+            Console.WriteLine($"Practicing for a test, are we? Please specify the number of questions to choose from. There are '{totals}' questions in total \n");
 
             program.Information(textFile, lines);
             program.Randomizer();
@@ -53,19 +53,39 @@ namespace Flashcard
         public void Randomizer()
         {
             Random rng = new Random();
-            int n = Questions.Count;
-
-            if (n > 0)
+            bool continueAsking = true;
+            while (continueAsking)
             {
-                int randomIndex = rng.Next(n);
-                Console.WriteLine($"Random Question: {Questions[randomIndex]}");
-                string answer = Console.ReadLine().ToLower();
-                if (answer == Answers[randomIndex].ToLower())
+                int n = Questions.Count;
+                if (n > 0)
                 {
-                    Console.WriteLine("That is correct!");
-                } else
+                    int randomIndex = rng.Next(n);
+                    Console.WriteLine($"Random Question: {Questions[randomIndex]}");
+                    string answer = Console.ReadLine().ToLower();
+                    if (answer == Answers[randomIndex].ToLower())
+                    {
+                        Console.WriteLine("That is correct!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is incorrect.");
+                    }
+
+                    Questions.RemoveAt(randomIndex);
+                    Answers.RemoveAt(randomIndex);
+                    Hints.RemoveAt(randomIndex);
+
+                    Console.WriteLine("More questions? Press (y) to continue or any other key to exit.");
+                    string userInput = Console.ReadLine().ToLower();
+                    if (userInput != "y")
+                    {
+                        continueAsking = false;
+                    }
+                }
+                else
                 {
-                    Console.WriteLine("That is incorrect.");
+                    Console.WriteLine("No more questions available.");
+                    continueAsking = false;
                 }
             }
         }
